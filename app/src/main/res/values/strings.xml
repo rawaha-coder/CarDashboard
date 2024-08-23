@@ -1,0 +1,10 @@
+<!--
+  ~ Project Name CarDashboard
+  ~ Created by Zakariae El Kadiri on 8/23/24, 5:57 PM
+  ~ Copyright (c) 2024 All rights reserved.
+  ~ Last modified 8/23/24, 1:02 PM
+  -->
+
+<resources>
+    <string name="app_name">CarDashboard</string>
+</resources>
