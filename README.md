@@ -4,10 +4,7 @@ An Android Clean Architecture app written in Kotlin, using Jetpack Compose, Kotl
 
 ### UI Layer
 
-The UI layer was implemented using:
-
-MVVM with ViewModels exposing UiState that the compose consume. The ViewModel does not know anything about it's consumers.
-It exposes a single source of truth as a UiState that the consumers can observe to get the events emitted.
+The role of the UI is to display the application data on the screen and also to serve as the primary point of user interaction. Whenever the data changes, either due to user interaction (like pressing a button) or external input (like a network response), the UI should update to reflect those changes. Effectively, the UI is a visual representation of the application state as retrieved from the data layer.
 
 
 ### Domain Layer
@@ -23,14 +20,13 @@ The data layer implements the repository interface that the domain layer defines
 ## Clean architecture layers
 
 <p align="center">
-    <img src="images/rings.png" alt="cleanrings"/>
+    <img src="https://github.com/user-attachments/assets/19a0f686-86cc-4ccc-ad2e-5c80f7a7a533" alt="cleanrings"/>
 </p>
+
 
 ## Architecture overview and rules
 
-<p align="center">
-    <img src="images/architecture.png" alt="architecture"/>
-</p>
+to do
 
 ## Feature
 
@@ -39,6 +35,7 @@ To do
 ## Tech Stack
 
 To do
+
 
 ## Libraries Used
 
