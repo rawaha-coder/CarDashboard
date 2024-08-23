@@ -1,6 +1,9 @@
 # CarDashboard
 
-An Android Clean Architecture app written in Kotlin, using Jetpack Compose, Kotlin Coroutines, and Android Architecture Components, with Hilt for Dependency Injection.
+
+## Project Info:
+CarDashboard is an Android app built to demonstrate the use of Clean Architecture and MVVM, leveraging modern Jetpack Architecture Components such as Jetpack Compose, Kotlin Coroutines, and Hilt for Dependency Injection, all implemented within a three-layered architecture.
+
 
 ### UI Layer
 
