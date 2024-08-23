@@ -29,7 +29,7 @@ The data layer implements the repository interface that the domain layer defines
 ## Architecture overview and rules
 
 <p align="center">
-    <img src="images/architecture.png" alt="architecture"/>
+    <img src="![rings](https://github.com/user-attachments/assets/36f59221-701c-4fb7-8543-aeaf8acb3837)" alt="architecture"/>
 </p>
 
 ## Feature
@@ -39,6 +39,7 @@ To do
 ## Tech Stack
 
 To do
+
 
 ## Libraries Used
 
