@@ -20,7 +20,7 @@ The data layer implements the repository interface that the domain layer defines
 ## Clean architecture layers
 
 <p align="center">
-    <img src="![app-architecture](https://github.com/user-attachments/assets/19a0f686-86cc-4ccc-ad2e-5c80f7a7a533)" alt="cleanrings"/>
+    <img src="https://github.com/user-attachments/assets/19a0f686-86cc-4ccc-ad2e-5c80f7a7a533" alt="cleanrings"/>
 </p>
 
 
