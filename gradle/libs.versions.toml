@@ -11,10 +11,10 @@ composeBom = "2024.04.01"
 appcompat = "1.7.0"
 material = "1.12.0"
 
-retrofit = "2.11.0"
-converterGson = "2.11.0"
+retrofitVersion = "2.11.0"
+gooleGsonVersion = "2.11.0"
 
-kotlinxCoroutinesAndroid = "1.3.9"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,9 +34,12 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
-retrofit = { group = "com.squareup.retrofit2:retrofit", name = "retrofit", version.ref = "retrofit" }
-converter-gson = { group = "com.squareup.retrofit2:converter-gson", name = "converter-gson", version.ref = "converterGson" }
+# Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
+gsonCoverter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
+gooleGson = { group = "com.google.code.gson", name = "gson", version.ref = "gooleGsonVersion" }
 
+# Coroutines
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx:kotlinx-coroutines-core", name = "kotlinx-coroutines-core", version.ref = "kotlin" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx:kotlinx-coroutines-android", name = "kotlinx-coroutines-android", version.ref = "kotlin" }
 

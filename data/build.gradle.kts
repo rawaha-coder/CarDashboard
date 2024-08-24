@@ -45,7 +45,8 @@ dependencies {
 
     //Retrofit
     implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+    implementation(libs.gooleGson)
+    implementation(libs.gsonCoverter)
 
     //Coroutines
     implementation(libs.kotlinx.coroutines.core)
