@@ -9,6 +9,6 @@ package com.automobilegt.domain.repository
 
 import com.automobilegt.domain.entity.WarningLightsResponse
 
-interface WarningLightRepository {
-    fun getWarningLightFormRemote(): WarningLightsResponse
+interface WarningLightsRepository {
+    fun getWarningLightFormRemote(): Result<WarningLightsResponse>
 }
