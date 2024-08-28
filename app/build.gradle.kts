@@ -73,4 +73,21 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.gooleGson)
+    implementation(libs.gsonCoverter)
+
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    //Room
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    implementation(libs.room.compiler)
 }

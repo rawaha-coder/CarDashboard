@@ -7,12 +7,12 @@
 
 package com.automobilegt.data.remote
 
-import com.automobilegt.domain.entity.WarningLightsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
 interface WarningLightsApiService {
 
     @GET("warning_lights.json")
-    fun getWarningLight(): Response<WarningLightsResponse>
+    suspend fun getWarningLights(): Response<List<WarningLightDto>>
+
 }

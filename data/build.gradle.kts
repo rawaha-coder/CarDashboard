@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ksp) apply false
 }
 
 android {
@@ -51,6 +52,15 @@ dependencies {
     //Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
+    //Room
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    implementation(libs.room.compiler)
+
+
+
+
 
 
 
