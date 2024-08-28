@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.hiltPlugin)
 }
 
 android {
@@ -59,9 +60,9 @@ dependencies {
     implementation(libs.room.compiler)
 
 
-
-
-
-
+    //Hilt
+    implementation (libs.hilt.android)
+    implementation (libs.dagger.compiler)
+    implementation (libs.hilt.compiler)
 
 }
