@@ -10,11 +10,8 @@ package com.automobilegt.domain.usecase
 import com.automobilegt.domain.entity.WarningLight
 import com.automobilegt.domain.repository.WarningLightRepository
 import com.automobilegt.domain.utils.DataResource
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
 class WarningLightUseCase(
     private val repository: WarningLightRepository

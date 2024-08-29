@@ -59,7 +59,6 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.room.compiler)
 
-
     //Hilt
     implementation (libs.hilt.android)
     implementation (libs.dagger.compiler)
