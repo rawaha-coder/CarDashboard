@@ -7,12 +7,15 @@
 
 package com.automobilegt.data.local
 
+
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.automobilegt.domain.entity.WarningLight
 
 
+@Dao
 interface WarningLightsDao {
 
     @Query("SELECT * FROM warning_light_table")

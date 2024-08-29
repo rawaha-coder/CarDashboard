@@ -7,11 +7,10 @@
 
 package com.automobilegt.data.local
 
-import android.app.Application
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.automobilegt.domain.entity.WarningLight
-import dagger.hilt.android.HiltAndroidApp
+
 
 @Database(entities = [WarningLight::class], version = 1)
 abstract class WarningLightDatabase: RoomDatabase(){

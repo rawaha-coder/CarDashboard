@@ -9,7 +9,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.hiltPlugin)
+    //alias(libs.plugins.hiltPlugin)
 }
 
 android {
@@ -76,25 +76,25 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(project(":domain"))
-    implementation(project(":data"))
+//    implementation(project(":domain"))
+//    implementation(project(":data"))
 
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.gooleGson)
-    implementation(libs.gsonCoverter)
-
-    //Coroutines
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
-    //Room
-    implementation(libs.room)
-    implementation(libs.room.ktx)
-    implementation(libs.room.compiler)
-
-    //Hilt
-    implementation (libs.hilt.android)
-    implementation (libs.dagger.compiler)
-    implementation (libs.hilt.compiler)
+//    //Retrofit
+//    implementation(libs.retrofit)
+//    implementation(libs.gooleGson)
+//    implementation(libs.gsonCoverter)
+//
+//    //Coroutines
+//    implementation(libs.kotlinx.coroutines.core)
+//    implementation(libs.kotlinx.coroutines.android)
+//
+//    //Room
+//    implementation(libs.room)
+//    implementation(libs.room.ktx)
+//    implementation(libs.room.compiler)
+//
+//    //Hilt
+//    implementation (libs.hilt.android)
+//    implementation (libs.dagger.compiler)
+//    implementation (libs.hilt.compiler)
 }

@@ -8,22 +8,22 @@
 package com.automobilegt.data.mapper
 
 
-import com.automobilegt.data.remote.WarningLightDto
-import com.automobilegt.domain.entity.WarningLight
-
-object WarningLightMapper {
-    fun mapDtoToDomain(dto: WarningLightDto, isBookmarked: Boolean): WarningLight {
-        return WarningLight(
-            id = dto.id,
-            name = dto.name,
-            status = dto.status,
-            severity = dto.severity,
-            description = dto.description,
-            code = dto.code,
-            advice = dto.advice,
-            icon = dto.icon,
-            bookmark = isBookmarked
-        )
-    }
-}
+//import com.automobilegt.data.remote.WarningLightDto
+//import com.automobilegt.domain.entity.WarningLight
+//
+//object WarningLightMapper {
+//    fun mapDtoToDomain(dto: WarningLightDto, isBookmarked: Boolean): WarningLight {
+//        return WarningLight(
+//            id = dto.id,
+//            name = dto.name,
+//            status = dto.status,
+//            severity = dto.severity,
+//            description = dto.description,
+//            code = dto.code,
+//            advice = dto.advice,
+//            icon = dto.icon,
+//            bookmark = isBookmarked
+//        )
+//    }
+//}
 

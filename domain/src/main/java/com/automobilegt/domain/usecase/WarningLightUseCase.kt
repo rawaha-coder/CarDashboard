@@ -11,7 +11,7 @@ import com.automobilegt.domain.entity.WarningLight
 import com.automobilegt.domain.repository.WarningLightRepository
 import com.automobilegt.domain.utils.DataResource
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
+
 
 class WarningLightUseCase(
     private val repository: WarningLightRepository

@@ -10,6 +10,7 @@ package com.automobilegt.data.remote
 import retrofit2.Response
 import retrofit2.http.GET
 
+
 interface WarningLightsApiService {
 
     @GET("warning_lights.json")
