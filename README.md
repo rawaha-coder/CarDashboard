@@ -26,23 +26,21 @@ The data layer implements the repository interface that the domain layer defines
     <img src="https://github.com/user-attachments/assets/19a0f686-86cc-4ccc-ad2e-5c80f7a7a533" alt="cleanrings"/>
 </p>
 
-
-## Architecture overview and rules
-
-to do
-
-## Feature
-
-To do
-
 ## Tech Stack
 
-To do
+* Kotlin
+* Jetpack Compose
+* Gradle
+* Material Design
 
 
 ## Libraries Used
 
-To do
+* [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
+* [Room](https://developer.android.com/topic/libraries/architecture/room)
+* [Retrofit2](https://square.github.io/retrofit/)
+* [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+
 
 ## Screenshots
 
