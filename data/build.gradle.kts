@@ -50,6 +50,10 @@ dependencies {
     implementation(libs.gooleGson)
     implementation(libs.gsonCoverter)
 
+    //okHttp
+    implementation(libs.okHttp)
+    implementation(libs.okHttpLoggingInterceptor)
+
     //Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -58,10 +62,5 @@ dependencies {
     implementation(libs.room)
     implementation(libs.room.ktx)
     implementation(libs.room.compiler)
-
-//    //Hilt
-//    implementation (libs.hilt.android)
-//    implementation (libs.dagger.compiler)
-//    implementation (libs.hilt.compiler)
 
 }

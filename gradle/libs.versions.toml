@@ -15,11 +15,11 @@ ksp = "2.0.0-1.0.24"
 
 retrofitVersion = "2.11.0"
 gooleGsonVersion = "2.11.0"
+okHttpVersion = "5.0.0-alpha.14"
 
 kotlinxCoroutinesCore = "1.9.0-RC.2"
 kotlinxCoroutinesAndroid = "1.9.0-RC.2"
 
-hilt = "2.52"
 hiltVersion = "2.52"
 
 room = "2.6.1"
@@ -42,15 +42,14 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hiltVersion" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion" }
-
-
 # Retrofit
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
 gsonCoverter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
 gooleGson = { group = "com.google.code.gson", name = "gson", version.ref = "gooleGsonVersion" }
+
+# okHttp
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttpVersion" }
+okHttpLoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpVersion" }
 
 # Coroutines
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx:kotlinx-coroutines-core", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -68,6 +67,6 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
-hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+
 
 
