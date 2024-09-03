@@ -9,7 +9,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp) apply false
-    //alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {

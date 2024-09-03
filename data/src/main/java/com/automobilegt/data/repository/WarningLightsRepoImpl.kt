@@ -15,9 +15,10 @@ import com.automobilegt.domain.repository.WarningLightRepository
 import com.automobilegt.domain.utils.DataResource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
 
-class WarningLightsRepoImpl (
+class WarningLightsRepoImpl @Inject constructor(
     private val warningLightsApiService: WarningLightsApiService,
     private val warningLightsDao: WarningLightsDao
 ) : WarningLightRepository {

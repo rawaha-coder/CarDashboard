@@ -10,15 +10,8 @@ package com.automobilegt.data.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// for test to be deleted
 object RetrofitInstance {
-
-//    operator fun invoke(): Retrofit {
-//        return Retrofit.Builder()
-//            .baseUrl(ApiConstants.BASE_URL)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//
-//    }
 
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()

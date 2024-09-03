@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -34,6 +35,8 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+
 
 dependencies {
 
