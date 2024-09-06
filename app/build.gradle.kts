@@ -8,7 +8,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -56,6 +56,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
 
 dependencies {
@@ -68,6 +70,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,25 +79,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-//    implementation(project(":domain"))
-//    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
-//    //Retrofit
-//    implementation(libs.retrofit)
-//    implementation(libs.gooleGson)
-//    implementation(libs.gsonCoverter)
-//
-//    //Coroutines
-//    implementation(libs.kotlinx.coroutines.core)
-//    implementation(libs.kotlinx.coroutines.android)
-//
-//    //Room
-//    implementation(libs.room)
-//    implementation(libs.room.ktx)
-//    implementation(libs.room.compiler)
-//
-//    //Hilt
-//    implementation (libs.hilt.android)
-//    implementation (libs.dagger.compiler)
-//    implementation (libs.hilt.compiler)
 }

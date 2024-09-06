@@ -8,8 +8,10 @@
 package com.automobilegt.data.mapper
 
 
+
 import com.automobilegt.data.remote.WarningLightDto
 import com.automobilegt.domain.entity.WarningLight
+
 
 object WarningLightMapper {
     fun mapDtoToDomain(dto: WarningLightDto, isBookmarked: Boolean): WarningLight {

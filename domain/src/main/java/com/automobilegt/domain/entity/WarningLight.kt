@@ -10,10 +10,14 @@ package com.automobilegt.domain.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//import androidx.room.Entity
+//import androidx.room.PrimaryKey
+
 
 @Entity(tableName = "warning_light_table")
 data class WarningLight(
-    @PrimaryKey val id: Int,
+    @PrimaryKey
+    val id: Int,
     val name: String,
     val status: String,
     val severity: String,
