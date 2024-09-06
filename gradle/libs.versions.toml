@@ -17,8 +17,8 @@ retrofitVersion = "2.11.0"
 gooleGsonVersion = "2.11.0"
 okHttpVersion = "5.0.0-alpha.14"
 
-kotlinxCoroutinesCore = "1.9.0-RC.2"
-kotlinxCoroutinesAndroid = "1.9.0-RC.2"
+coroutinesCore = "1.8.1"
+coroutinesAndroid = "1.8.1"
 
 # DI
 hilt = "2.52"
@@ -54,8 +54,8 @@ okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHtt
 okHttpLoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpVersion" }
 
 # Coroutines
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx:kotlinx-coroutines-core", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx:kotlinx-coroutines-android", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesCore" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutinesAndroid" }
 
 # Room Database
 room = { group = "androidx.room", name = "room-runtime", version.ref ="room"}

@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.ksp) apply false
-    //alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -43,12 +45,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.gooleGson)
-    implementation(libs.gsonCoverter)
-
-
     //Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -58,8 +54,8 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.room.compiler)
 
-//    //Hilt
-//    implementation (libs.hilt.android)
-//    implementation (libs.dagger.compiler)
-//    implementation (libs.hilt.compiler)
+    //Hilt
+    //Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }
