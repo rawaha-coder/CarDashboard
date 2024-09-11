@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.automobilegt.cardashboard.ui.screen.components.WarningLightMeaning
 import com.automobilegt.cardashboard.ui.viewmodel.WarningLightViewModel
 import com.automobilegt.domain.utils.DataResource
 
@@ -36,42 +37,16 @@ fun WarningLightScreen(
 ) {
     val warningLightsState = viewModel.warningLights.collectAsState()
 
-    when (val state = warningLightsState.value) {
-        is DataResource.Fetching -> {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Spacer(modifier = Modifier.height(32.dp))
-                CircularProgressIndicator(
-                    color = Color.White,
-                    modifier = Modifier.size(32.dp)
-                )
+    warningLightsState.value.data?.let { warningLights ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 48.dp, start = 4.dp, end = 4.dp, bottom = 4.dp)
+        )
+        {
+            items(warningLights) { warningLight ->
+                WarningLightMeaning(warningLight)
             }
-
-        }
-        is DataResource.Success -> {
-            state.data?.let { warningLights ->
-                LazyColumn(modifier = Modifier.fillMaxSize()) {
-                    items(warningLights) { warningLight ->
-                        Column(
-                            modifier = Modifier
-                                .clickable {
-                                    //navController.navigate(DetailsScreen.createRoute(warningLight.id))
-                                }
-                                .padding(16.dp)
-                        ) {
-                            // Display warning light icon and title
-                            Text(text = warningLight.name)
-                        }
-                    }
-                }
-            }
-        }
-        is DataResource.Error -> {
-            // Show error message
-            Text(text = "Error: ${state.message}", modifier = Modifier.fillMaxSize())
         }
     }
 }

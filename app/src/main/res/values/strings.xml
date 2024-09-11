@@ -7,4 +7,7 @@
 
 <resources>
     <string name="app_name">CarDashboard</string>
+    <string name="alert_dialog_title">Error</string>
+    <string name="alert_dialog_text">Chech connexion</string>
+    <string name="confirm">Confirm</string>
 </resources>
