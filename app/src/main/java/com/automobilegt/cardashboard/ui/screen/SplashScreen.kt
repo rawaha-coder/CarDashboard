@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -43,7 +44,7 @@ fun SplashScreen(
     val loadingState by viewModel.warningLights.collectAsState()
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.primary
+        color = colorResource(id = R.color.purple_500) //MaterialTheme.colorScheme.primary
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -51,7 +52,7 @@ fun SplashScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.ic_car_dashboard_240dp),
                 contentDescription = "App Logo",
                 modifier = Modifier
                     .size(120.dp)
