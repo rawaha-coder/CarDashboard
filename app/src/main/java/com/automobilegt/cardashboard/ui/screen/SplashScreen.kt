@@ -20,6 +20,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -27,10 +29,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.automobilegt.cardashboard.R
+import com.automobilegt.cardashboard.ui.navigation.Screen
+import com.automobilegt.cardashboard.ui.viewmodel.WarningLightViewModel
+import com.automobilegt.domain.utils.DataResource
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    navController: NavHostController,
+    viewModel: WarningLightViewModel
+) {
+    val loadingState by viewModel.warningLights.collectAsState()
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.primary
@@ -65,6 +75,11 @@ fun SplashScreen() {
                 color = Color.White,
                 modifier = Modifier.size(32.dp)
             )
+        }
+    }
+    if (loadingState is DataResource.Success) {
+        navController.navigate(Screen.WarningLightScreen.route) {
+            popUpTo(Screen.WarningLightScreen.route) { inclusive = true }
         }
     }
 }

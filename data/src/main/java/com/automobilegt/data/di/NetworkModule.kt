@@ -7,7 +7,8 @@
 
 package com.automobilegt.data.di
 
-import com.automobilegt.data.remote.ApiConstants
+
+import com.automobilegt.data.remote.BASE_URL
 import com.automobilegt.data.remote.WarningLightsApiService
 import dagger.Module
 import dagger.Provides
@@ -40,7 +41,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit{
         return Retrofit.Builder()
-            .baseUrl(ApiConstants.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

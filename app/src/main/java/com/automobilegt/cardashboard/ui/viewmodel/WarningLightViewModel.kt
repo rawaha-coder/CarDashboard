@@ -26,9 +26,6 @@ class WarningLightViewModel @Inject constructor(
     private val _warningLights = MutableStateFlow<DataResource<List<WarningLight>>>(DataResource.Fetching())
     val warningLights: StateFlow<DataResource<List<WarningLight>>> = _warningLights
 
-    private val _loadingState = MutableStateFlow<Boolean>(true)
-    val loadingState: StateFlow<Boolean> = _loadingState
-
     init {
         loadWarningLights()
     }
@@ -38,7 +35,6 @@ class WarningLightViewModel @Inject constructor(
             warningLightUseCase.getWarningLights().collect(
                 _warningLights
             )
-            _loadingState.value = false
         }
     }
 

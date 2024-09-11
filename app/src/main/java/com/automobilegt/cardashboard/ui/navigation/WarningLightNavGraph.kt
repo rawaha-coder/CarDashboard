@@ -28,13 +28,7 @@ fun WarningLightNavGraph(
         startDestination = Screen.SplashScreen.route
     ) {
         composable(Screen.SplashScreen.route) {
-            val loadingState by viewModel.loadingState.collectAsState()
-            SplashScreen()
-            if (!loadingState) {
-                navController.navigate(Screen.WarningLightScreen.route) {
-                    popUpTo(Screen.WarningLightScreen.route) { inclusive = true }
-                }
-            }
+            SplashScreen(navController = navController, viewModel = viewModel)
         }
         composable(Screen.WarningLightScreen.route) {
             WarningLightScreen(navController = navController, viewModel = viewModel)
