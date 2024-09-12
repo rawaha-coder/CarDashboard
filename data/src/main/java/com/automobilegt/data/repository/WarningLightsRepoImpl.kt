@@ -50,10 +50,14 @@ class WarningLightsRepoImpl @Inject constructor(
                     emit(DataResource.Success(entities))
                 }
             } else {
-                emit(DataResource.Error("Failed to fetch data from Remote, please check internet"))
+                if (cachedData.isEmpty()) {
+                    emit(DataResource.Error("Failed to fetch data from Remote, please check internet"))
+                }
             }
         } catch (e: Exception) {
-            emit(DataResource.Error("Error occurred: ${e.message}"))
+            if (cachedData.isEmpty()) {
+                emit(DataResource.Error("Error occurred: ${e.message}"))
+            }
         }
     }
 
