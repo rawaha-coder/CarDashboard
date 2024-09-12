@@ -58,7 +58,7 @@ fun SplashScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_car_dashboard_240dp),
+                painter = painterResource(id = R.drawable.car_dashboard_logo),
                 contentDescription = "App Logo",
                 modifier = Modifier
                     .size(120.dp)

@@ -10,7 +10,7 @@
 
     <style name="Theme.AppSplashTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/purple_500</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_car_dashboard_240dp</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/car_dashboard_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.CarDashboard</item>
     </style>
     <style name="Theme.CarDashboard" parent="android:Theme.Material.Light.NoActionBar" />
