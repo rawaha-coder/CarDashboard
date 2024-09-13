@@ -30,13 +30,8 @@ The data layer implements the repository interface that the domain layer defines
 
 * Gradle
 * Kotlin
-* Coroutines
 * Jetpack Compose
 * Material Design
-* Room database
-* Retrofit
-* Hilt
-* Coil
 
 
 ## Libraries Used
@@ -45,6 +40,7 @@ The data layer implements the repository interface that the domain layer defines
 * [Room](https://developer.android.com/topic/libraries/architecture/room)
 * [Retrofit2](https://square.github.io/retrofit/)
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+* [Coil](https://coil-kt.github.io/coil/compose/)
 
 
 ## Screenshots
