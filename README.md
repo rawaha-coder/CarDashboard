@@ -28,10 +28,15 @@ The data layer implements the repository interface that the domain layer defines
 
 ## Tech Stack
 
-* Kotlin
-* Jetpack Compose
 * Gradle
+* Kotlin
+* Coroutines
+* Jetpack Compose
 * Material Design
+* Room database
+* Retrofit
+* Hilt
+* Coil
 
 
 ## Libraries Used
