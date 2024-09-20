@@ -1,5 +1,7 @@
 # CarDashboard
 
+# About
+This app provides an updated list of dashboard warning lights with descriptions, along with caching to work offline
 
 ## Project Info:
 CarDashboard is an Android app built to demonstrate the use of Clean Architecture and MVVM, leveraging modern Jetpack Architecture Components such as Jetpack Compose, Kotlin Coroutines, and Hilt for Dependency Injection, all implemented within a three-layered architecture.
