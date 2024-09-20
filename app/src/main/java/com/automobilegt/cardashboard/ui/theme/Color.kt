@@ -17,7 +17,8 @@ val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
-
+val PurpleLeft = Color(0xFF351D79)
+val PurpleRight = Color(0xFFC2B2F3)
 // LIGHT
 val GreenPrimaryLight = Color(0xff006e26)
 val OnGreenLight = Color(0xffffffff)

@@ -39,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
@@ -46,6 +47,9 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.automobilegt.cardashboard.ui.theme.GreenSecondaryLight
 import com.automobilegt.cardashboard.ui.theme.OnGreenLight
+import com.automobilegt.cardashboard.ui.theme.Purple40
+import com.automobilegt.cardashboard.ui.theme.PurpleLeft
+import com.automobilegt.cardashboard.ui.theme.PurpleRight
 import com.automobilegt.domain.entity.WarningLight
 
 
@@ -55,7 +59,14 @@ fun WarningLightScreenBody(
 ){
     var showDescription by rememberSaveable { mutableStateOf(false) }
     Column (
-        Modifier.background(GreenSecondaryLight)
+        Modifier.background(
+            brush = Brush.horizontalGradient(
+                colors = listOf(
+                    PurpleLeft,
+                    PurpleRight
+                )
+            )
+        )
     ){
             Row(
                 modifier = Modifier
