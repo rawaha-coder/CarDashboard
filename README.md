@@ -5,10 +5,14 @@ This app provides an updated list of dashboard warning lights with descriptions,
 
 ## Screenshots
 
-![00](https://github.com/user-attachments/assets/0913e5fa-9162-4f40-9aad-8ecaa84ce17c)
 
+![01](https://github.com/user-attachments/assets/06134f1a-2863-4f08-ba8a-cfe53d042fbe)
 
-![01](https://github.com/user-attachments/assets/929c4d45-7222-470f-a792-65fc94424c25)
+![02](https://github.com/user-attachments/assets/c10a835a-a1cb-447d-a432-191667ffcdfc)
+
+![03](https://github.com/user-attachments/assets/4301bd10-4ae6-45cd-a9dc-1f2f0c4e680e)
+
+![04](https://github.com/user-attachments/assets/7cd5388f-340c-45a8-bf5d-53ea999c7259)
 
 
 
