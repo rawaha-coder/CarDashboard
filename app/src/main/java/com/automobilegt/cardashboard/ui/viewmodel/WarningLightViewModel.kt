@@ -30,7 +30,7 @@ class WarningLightViewModel @Inject constructor(
         loadWarningLights()
     }
 
-    private fun loadWarningLights() {
+    fun loadWarningLights() {
         viewModelScope.launch {
             warningLightUseCase.getWarningLights().collect(
                 _warningLights
@@ -41,6 +41,14 @@ class WarningLightViewModel @Inject constructor(
     fun updateBookmarkStatus(id: Int, bookmark: Boolean) {
         viewModelScope.launch {
             warningLightUseCase.updateBookmark (id, bookmark)
+        }
+    }
+
+    fun getBookmarkedWarningLight(){
+        viewModelScope.launch {
+            warningLightUseCase.getBookmarkedWarningLight().collect(
+                _warningLights
+            )
         }
     }
 }

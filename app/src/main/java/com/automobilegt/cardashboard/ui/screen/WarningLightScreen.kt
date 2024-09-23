@@ -11,30 +11,34 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.automobilegt.cardashboard.ui.screen.components.WarningLightScreenBody
+import com.automobilegt.cardashboard.ui.navigation.Screen
+import com.automobilegt.cardashboard.ui.screen.components.TopAppBarContent
+import com.automobilegt.cardashboard.ui.screen.components.WarningLightItem
 import com.automobilegt.cardashboard.ui.theme.PurpleLeft
 import com.automobilegt.cardashboard.ui.theme.PurpleRight
 import com.automobilegt.cardashboard.ui.viewmodel.WarningLightViewModel
@@ -67,7 +71,7 @@ fun WarningLightScreen(
                 TopAppBarContent(scrollBehavior = scrollBehavior)
             },
             bottomBar = {
-                BottomAppBarContent()
+                BottomAppBarContent(viewModel = viewModel)
             }
         ) { paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)) {
@@ -77,47 +81,8 @@ fun WarningLightScreen(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopAppBarContent(
-    modifier: Modifier = Modifier,
-    scrollBehavior: TopAppBarScrollBehavior
-){
-    TopAppBar(
-        modifier = modifier,
-        scrollBehavior = scrollBehavior,
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(0.6f)
-        ),
-        title = {
-            Text(
-                text = "Car DashBoard Warning Light",
-                color = MaterialTheme.colorScheme.onBackground.copy(0.8f),
-                fontWeight = FontWeight.Bold
-            )
-                },
-        navigationIcon = {
-            Icon(
-                modifier = Modifier
-                    .padding(end = 8.dp)
-                    .size(28.dp),
-                imageVector = Icons.Default.Menu,
-                contentDescription = null
-            )
-        },
-        actions = {
-            Icon(
-                modifier = Modifier
-                    .padding(start = 8.dp, end = 24.dp)
-                    .size(28.dp),
-                imageVector = Icons.Default.Search,
-                contentDescription = null
-            )
-        }
 
-    )
 
-}
 
 @Composable
 fun MiddleAppContent(
@@ -133,13 +98,71 @@ fun MiddleAppContent(
         )
         {
             items(warningLights) { warningLight ->
-                WarningLightScreenBody(warningLight)
+                WarningLightItem(warningLight, bookmark = {
+                    id, bookmarked -> viewModel.updateBookmarkStatus(id, bookmarked)
+                 }
+                )
             }
         }
     }
 }
 
-@Composable
-fun BottomAppBarContent(){
 
+
+@Composable
+fun BottomAppBarContent(viewModel: WarningLightViewModel){
+
+    var selected by rememberSaveable { mutableIntStateOf(0) }
+    NavigationBar {
+        bottomNavItemList.forEachIndexed {index, bottomNavItem ->
+
+            NavigationBarItem(
+                selected = index == selected,
+                onClick = {
+                    selected = index
+                    if (index == 0){
+                        viewModel.loadWarningLights()
+                    }else if(index == 1){
+                        viewModel.getBookmarkedWarningLight()
+                    }
+                },
+                icon = {
+                    Icon(
+                        imageVector =
+                        if(index == selected)
+                            bottomNavItem.selectedIcon
+                        else
+                            bottomNavItem.unselectedIcon,
+                        contentDescription = ""
+                    )
+                }
+            )
+        }
+    }
 }
+
+val bottomNavItemList = listOf(
+    BottomNavItem(
+        title = "Home",
+        route = Screen.WarningLightScreen.route,
+        selectedIcon = Icons.Filled.Home,
+        unselectedIcon = Icons.Outlined.Home,
+        isSelected = false
+    ),
+    BottomNavItem(
+        title = "Bookmark",
+        route = Screen.BookmarkScreen.route,
+        selectedIcon = Icons.Filled.Favorite,
+        unselectedIcon = Icons.Outlined.FavoriteBorder,
+        isSelected = false
+    ),
+)
+
+data class BottomNavItem(
+    val title: String,
+    val route: String,
+    val selectedIcon: ImageVector,
+    val unselectedIcon: ImageVector,
+    var isSelected: Boolean
+)
+

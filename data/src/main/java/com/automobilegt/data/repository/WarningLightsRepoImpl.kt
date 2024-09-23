@@ -64,4 +64,20 @@ class WarningLightsRepoImpl @Inject constructor(
     override suspend fun updateBookmark(id: Int, isBookmarked: Boolean) {
         warningLightsDao.updateBookmark(id, isBookmarked)
     }
+
+    override suspend fun getBookmarkedWarningLight(): Flow<DataResource<List<WarningLight>>> = flow {
+        emit(DataResource.Fetching())
+        val bookmarkData = warningLightsDao.getBookmarkedWarningLight()
+
+        try {
+            if (bookmarkData.isNotEmpty()) {
+                emit(DataResource.Success(bookmarkData))
+            }
+        }catch (e: Exception) {
+            if (bookmarkData.isEmpty()){
+                emit(DataResource.Error("Error occurred: ${e.message}"))
+            }
+        }
+
+    }
 }

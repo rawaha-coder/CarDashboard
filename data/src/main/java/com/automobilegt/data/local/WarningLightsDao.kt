@@ -33,4 +33,8 @@ interface WarningLightsDao {
     @Query("DELETE FROM warning_light_table")
     suspend fun clearAll()
 
+    @Query("SELECT * FROM warning_light_table WHERE bookmark = 1")
+    //@Query("SELECT * FROM warning_light_table")
+    suspend fun getBookmarkedWarningLight(): List<WarningLight>
+
 }

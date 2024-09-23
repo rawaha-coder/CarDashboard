@@ -16,4 +16,6 @@ interface WarningLightRepository {
     suspend fun getWarningLights(): Flow<DataResource<List<WarningLight>>>
 
     suspend fun updateBookmark(id: Int, isBookmarked: Boolean)
+
+    suspend fun getBookmarkedWarningLight(): Flow<DataResource<List<WarningLight>>>
 }

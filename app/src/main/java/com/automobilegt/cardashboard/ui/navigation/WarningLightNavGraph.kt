@@ -8,8 +8,7 @@
 package com.automobilegt.cardashboard.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -34,8 +33,7 @@ fun WarningLightNavGraph(
             WarningLightScreen(navController = navController, viewModel = viewModel)
         }
         composable(Screen.BookmarkScreen.route){
-        }
-        composable(Screen.DetailsScreen.route) {
+            //BookmarkWarningLightScreen(navController = navController, viewModel = viewModel)
         }
     }
 }
