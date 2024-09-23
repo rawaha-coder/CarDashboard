@@ -1,7 +1,17 @@
 # CarDashboard
 
-# About
+## About
 This app provides an updated list of dashboard warning lights with descriptions, along with caching to work offline
+
+## Libraries and tools Used
+
+* [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
+* [Retrofit2](https://square.github.io/retrofit/)
+* [Room](https://developer.android.com/jetpack/androidx/releases/room)
+* [coil Compose](https://coil-kt.github.io/coil/compose/)
+* [Hilt](https://dagger.dev/hilt/)
+* [Navigation Compose](https://developer.android.com/develop/ui/compose/navigation)
+* [Jetpack Compose](https://developer.android.com/compose)
 
 ## Screenshots
 
