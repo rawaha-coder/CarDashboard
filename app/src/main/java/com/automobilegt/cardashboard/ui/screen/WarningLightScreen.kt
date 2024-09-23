@@ -36,7 +36,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.automobilegt.cardashboard.ui.navigation.Screen
 import com.automobilegt.cardashboard.ui.screen.components.TopAppBarContent
 import com.automobilegt.cardashboard.ui.screen.components.WarningLightItem
 import com.automobilegt.cardashboard.ui.theme.PurpleLeft
@@ -47,8 +46,7 @@ import com.automobilegt.cardashboard.ui.viewmodel.WarningLightViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WarningLightScreen(
-    navController: NavHostController,
-    viewModel: WarningLightViewModel,
+    viewModel: WarningLightViewModel
 ) {
         val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
             state = rememberTopAppBarState()
@@ -80,8 +78,6 @@ fun WarningLightScreen(
         }
     }
 }
-
-
 
 
 @Composable
@@ -133,7 +129,7 @@ fun BottomAppBarContent(viewModel: WarningLightViewModel){
                             bottomNavItem.selectedIcon
                         else
                             bottomNavItem.unselectedIcon,
-                        contentDescription = ""
+                        contentDescription = "${bottomNavItem.title} page"
                     )
                 }
             )
@@ -144,14 +140,12 @@ fun BottomAppBarContent(viewModel: WarningLightViewModel){
 val bottomNavItemList = listOf(
     BottomNavItem(
         title = "Home",
-        route = Screen.WarningLightScreen.route,
         selectedIcon = Icons.Filled.Home,
         unselectedIcon = Icons.Outlined.Home,
         isSelected = false
     ),
     BottomNavItem(
         title = "Bookmark",
-        route = Screen.BookmarkScreen.route,
         selectedIcon = Icons.Filled.Favorite,
         unselectedIcon = Icons.Outlined.FavoriteBorder,
         isSelected = false
@@ -160,7 +154,6 @@ val bottomNavItemList = listOf(
 
 data class BottomNavItem(
     val title: String,
-    val route: String,
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,
     var isSelected: Boolean

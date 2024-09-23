@@ -10,5 +10,4 @@ package com.automobilegt.cardashboard.ui.navigation
 sealed class Screen(val route: String) {
     object SplashScreen : Screen("splash_screen")
     object WarningLightScreen : Screen("warning_light_screen")
-    object BookmarkScreen : Screen("bookmark_screen")
 }
