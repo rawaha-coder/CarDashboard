@@ -30,10 +30,7 @@ fun WarningLightNavGraph(
             SplashScreen(navController = navController, viewModel = viewModel)
         }
         composable(Screen.WarningLightScreen.route) {
-            WarningLightScreen(navController = navController, viewModel = viewModel)
-        }
-        composable(Screen.BookmarkScreen.route){
-            //BookmarkWarningLightScreen(navController = navController, viewModel = viewModel)
+            WarningLightScreen(viewModel = viewModel)
         }
     }
 }
