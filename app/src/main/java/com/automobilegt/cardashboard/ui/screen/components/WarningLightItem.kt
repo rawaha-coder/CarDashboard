@@ -8,10 +8,8 @@
 package com.automobilegt.cardashboard.ui.screen.components
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -27,6 +25,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -41,23 +40,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.automobilegt.cardashboard.ui.theme.GreenSecondaryLight
 import com.automobilegt.cardashboard.ui.theme.OnGreenLight
-import com.automobilegt.cardashboard.ui.theme.Purple40
 import com.automobilegt.cardashboard.ui.theme.PurpleLeft
 import com.automobilegt.cardashboard.ui.theme.PurpleRight
 import com.automobilegt.domain.entity.WarningLight
 
 
 @Composable
-fun WarningLightScreenBody(
-    warningLight: WarningLight
+fun WarningLightItem(
+    warningLight: WarningLight,
+    bookmark: (id: Int, Boolean)-> Unit
 ){
     var showDescription by rememberSaveable { mutableStateOf(false) }
+    var isBookmarked by rememberSaveable { mutableStateOf(warningLight.bookmark) }
     Column (
         Modifier.background(
             brush = Brush.horizontalGradient(
@@ -124,10 +122,15 @@ fun WarningLightScreenBody(
                         modifier = Modifier
                             .padding(24.dp)
                             .clickable {
-
+                                isBookmarked = !isBookmarked
+                                bookmark(warningLight.id, isBookmarked)
                             },
-                        imageVector = Icons.Default.FavoriteBorder,
-                        contentDescription = ""
+                        imageVector =
+                            if (isBookmarked )
+                                Icons.Filled.Favorite
+                            else
+                                Icons.Filled.FavoriteBorder,
+                        contentDescription = "Bookmark warning light"
                     )
                 }
             }

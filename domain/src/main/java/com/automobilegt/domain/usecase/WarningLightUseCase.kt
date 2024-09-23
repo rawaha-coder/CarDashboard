@@ -26,4 +26,8 @@ class WarningLightUseCase @Inject constructor(
     suspend fun updateBookmark(id: Int, isBookmarked: Boolean) {
         repository.updateBookmark(id, isBookmarked)
     }
+
+    suspend fun getBookmarkedWarningLight(): Flow<DataResource<List<WarningLight>>> {
+        return repository.getBookmarkedWarningLight()
+    }
 }

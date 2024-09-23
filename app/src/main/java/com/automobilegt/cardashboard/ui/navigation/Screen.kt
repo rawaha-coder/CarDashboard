@@ -11,7 +11,4 @@ sealed class Screen(val route: String) {
     object SplashScreen : Screen("splash_screen")
     object WarningLightScreen : Screen("warning_light_screen")
     object BookmarkScreen : Screen("bookmark_screen")
-    object DetailsScreen : Screen("details_screen/{id}") {
-        fun createRoute(id: Int) = "details_screen/$id"
-    }
 }
