@@ -14,8 +14,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Bookmarks
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.outlined.BookmarkBorder
+import androidx.compose.material.icons.outlined.Bookmarks
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -35,7 +40,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.automobilegt.cardashboard.ui.screen.components.TopAppBarContent
 import com.automobilegt.cardashboard.ui.screen.components.WarningLightItem
 import com.automobilegt.cardashboard.ui.theme.PurpleLeft
@@ -146,8 +150,8 @@ val bottomNavItemList = listOf(
     ),
     BottomNavItem(
         title = "Bookmark",
-        selectedIcon = Icons.Filled.Favorite,
-        unselectedIcon = Icons.Outlined.FavoriteBorder,
+        selectedIcon = Icons.Filled.Bookmarks,
+        unselectedIcon = Icons.Outlined.Bookmarks,
         isSelected = false
     ),
 )

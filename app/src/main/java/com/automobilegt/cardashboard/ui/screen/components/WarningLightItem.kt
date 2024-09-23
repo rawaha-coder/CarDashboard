@@ -25,8 +25,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.outlined.BookmarkBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -127,9 +129,9 @@ fun WarningLightItem(
                             },
                         imageVector =
                             if (isBookmarked )
-                                Icons.Filled.Favorite
+                                Icons.Filled.Bookmark
                             else
-                                Icons.Filled.FavoriteBorder,
+                                Icons.Outlined.BookmarkBorder,
                         contentDescription = "Bookmark warning light"
                     )
                 }
