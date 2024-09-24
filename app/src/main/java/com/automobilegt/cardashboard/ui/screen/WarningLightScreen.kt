@@ -113,7 +113,8 @@ fun MiddleAppContent(
 fun BottomAppBarContent(viewModel: WarningLightViewModel){
 
     var selected by rememberSaveable { mutableIntStateOf(0) }
-    NavigationBar {
+    NavigationBar (
+    ){
         bottomNavItemList.forEachIndexed {index, bottomNavItem ->
 
             NavigationBarItem(
